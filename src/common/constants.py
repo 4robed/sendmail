@@ -128,13 +128,9 @@ LANGUAGES = [
     ('uk-UA', 'Ukrainian'),
 ]
 
-LANGUAGES_FOLDER = {
+LANGUAGE_FOLDERS = {
     "en": "en",
     "vi": "vi"
 }
 
-LANGUAGES_SUBJECT = {
-    "en": "Hello",
-    "vi": "Xin chao"
-}
 

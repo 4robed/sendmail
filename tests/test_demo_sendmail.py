@@ -1,5 +1,8 @@
 import requests
 import json
+from src.common.constants import LANGUAGE_FOLDERS
+
+
 API_URI = 'http://localhost:5000'
 
 
@@ -17,7 +20,7 @@ def test_demo_sendmail_en():
         }
     })
 
-    languages = ["en", "vi"]
+    languages = LANGUAGE_FOLDERS.keys()
 
     for language in languages:
 
@@ -26,7 +29,10 @@ def test_demo_sendmail_en():
             'Content-Type': 'application/json'
         }
 
-        resp = requests.request("POST", API_URI + url, headers=headers, data=payload)
+        resp = requests.request("POST",
+                                API_URI + url,
+                                headers=headers,
+                                data=payload)
         assert resp.status_code == 200
 
         resp_body = resp.json()

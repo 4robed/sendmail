@@ -19,6 +19,15 @@ REDIS:
   host: 'localhost'
   port: 6379
 
+SMTP:
+  app_name: 'Gears 54'
+  username: ''
+  password: ''
+  port: 587
+  host: 'smtp.gmail.com'
+  support: 'support@gears54.hospital'
+  website: 'https://gears54.net'
+    
 LOG_FILE: 'tmp/output.log'
 ```
 

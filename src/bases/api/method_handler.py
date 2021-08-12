@@ -1,6 +1,6 @@
 from src.bases.schema import BaseSchema
 from src.bases.error import HTTPError
-from src.common.constants import LANGUAGES_FOLDER
+
 
 class PayloadHandler(object):
     def __init__(self, request):

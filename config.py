@@ -27,6 +27,16 @@ REDIS = data.get('REDIS', dict(
 
 SENTRY_DNS = data.get('SENTRY_DNS', 'http://localhost:5000')
 
+SMTP = data.get('SMTP', dict(
+    app_name='',
+    username='',
+    password='',
+    port='',
+    host='',
+    support='',
+    website=''
+))
+
 
 class CeleryConfig(object):
     env = ENVIRONMENT
@@ -52,10 +62,10 @@ class ApiConfig(object):
 
 
 class SMTPConfig(object):
-    app_name = 'Gears 54'
-    username = 'kidzzzz14@gmail.com'
-    password = 'anhhung1'
-    port = 587
-    host = 'smtp.gmail.com'
-    support = 'support@gears54.hospital'
-    website = 'https://gears54.net'
+    app_name = SMTP['app_name']
+    username = SMTP['username']
+    password = SMTP['password']
+    port = SMTP['port']
+    host = SMTP['host']
+    support = SMTP['support']
+    website = SMTP['website']
