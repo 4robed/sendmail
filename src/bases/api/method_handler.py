@@ -1,6 +1,6 @@
 from src.bases.schema import BaseSchema
 from src.bases.error import HTTPError
-
+from src.common.constants import LANGUAGES_FOLDER
 
 class PayloadHandler(object):
     def __init__(self, request):
@@ -85,6 +85,8 @@ class MethodHandler(object):
                             error='BadRequestParams',
                             status_code=400)
         result = schema.load(self.raw_params)
+
+        result['language_code'] = self.request.headers.get('Accept-Language') or 'vi'
         return result
 
     def _check_auth(self):
