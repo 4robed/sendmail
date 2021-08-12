@@ -3,7 +3,7 @@ import json
 API_URI = 'http://localhost:5000'
 
 
-def test_demo_sendmail():
+def test_demo_sendmail_en():
 
     url = "/demo/send_mail"
 
@@ -17,13 +17,19 @@ def test_demo_sendmail():
         }
     })
 
-    headers = {
-        'Accept-Language': 'en',
-        'Content-Type': 'application/json'
-    }
+    languages = ["en", "vi"]
 
-    resp = requests.request("POST", API_URI + url, headers=headers, data=payload)
-    assert resp.status_code == 200
+    for language in languages:
 
-    resp_body = resp.json()
-    assert ("id" in resp_body.keys())
+        headers = {
+            'Accept-Language': language,
+            'Content-Type': 'application/json'
+        }
+
+        resp = requests.request("POST", API_URI + url, headers=headers, data=payload)
+        assert resp.status_code == 200
+
+        resp_body = resp.json()
+        assert ("id" in resp_body.keys())
+
+
