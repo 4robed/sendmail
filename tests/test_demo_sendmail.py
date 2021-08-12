@@ -1,30 +1,29 @@
 import requests
 import json
-
 API_URI = 'http://localhost:5000'
 
 
 def test_demo_sendmail():
 
-    data = {
+    url = "/demo/send_mail"
+
+    payload = json.dumps({
         "account": {
             "email": "n.hung19920@gmail.com",
-            "name": "name"
+            "name": "HungNguyen"
         },
         "info": {
-            "description": "Chao, day la tin nhan he thong"
+            "description": "sendmail demo with celery worker"
         }
+    })
+
+    headers = {
+        'Accept-Language': 'en',
+        'Content-Type': 'application/json'
     }
 
-    url = r"/demo/send_mail"
-
-    resp = requests.post(API_URI + url, json=data)
+    resp = requests.request("POST", API_URI + url, headers=headers, data=payload)
     assert resp.status_code == 200
 
     resp_body = resp.json()
-
     assert ("id" in resp_body.keys())
-
-
-
-

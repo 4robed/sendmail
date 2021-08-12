@@ -127,3 +127,14 @@ LANGUAGES = [
     ('tr-TR', 'Turkish'),
     ('uk-UA', 'Ukrainian'),
 ]
+
+LANGUAGES_FOLDER = {
+    "en": "en",
+    "vi": "vi"
+}
+
+LANGUAGES_SUBJECT = {
+    "en": "Hello",
+    "vi": "Xin chao"
+}
+
