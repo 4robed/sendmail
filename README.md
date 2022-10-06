@@ -1,4 +1,5 @@
 # SENDMAIL service
+An internship project, Send email by API
 
 ## Requirements
 - Ubuntu 18.04
